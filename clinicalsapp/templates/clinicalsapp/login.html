@@ -1,0 +1,12 @@
+{%extends 'clinicalsapp/index.html'%}
+
+{%block body%}
+
+<form action="" method="POST">
+    {%csrf_token%}
+
+    <br><br>
+    {{form}}
+    <button type="submit">Login</button>
+</form>
+{%endblock%}

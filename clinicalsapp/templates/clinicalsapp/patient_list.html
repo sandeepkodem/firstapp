@@ -1,0 +1,48 @@
+
+{% extends 'clinicalsapp/index.html'%}
+
+ {%block body%}  
+<body>
+    <br>
+    <table class ='table'>
+        <thead>
+            <th>FIRSTNAME</th>
+            <br>
+            <TH>LASTNAME</TH>
+            <TH>AGE</TH>
+        </thead>
+        {%for patient in patient_list%}
+        <TR>
+            <TD>
+                {{patient.firstname}}
+                
+
+            </TD>
+            <td>
+                {{patient.lastname}}
+            </td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.email}}</td>
+        <td>{%if user.is_superuser%}
+            {{patient.amount_paid}}
+            {%endif%}</td>
+            <td>
+
+            <a href="/update/{{patient.id}}">edit</a>
+            
+            &nbsp&nbsp
+            {%if user.is_superuser%}
+            <a href="/delete/{{patient.id}}">delete</a>
+            {%endif%}
+        </td>
+        <td><a href="/adddata/{{patient.id}}">Add data</a></td>
+        <td><a href="email/{{patient.id}}">sendmail</a></td>
+        <td><button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Send email</button></td>
+        </TR>
+        {%endfor%}
+    </table>
+    
+    
+</body>
+{%endblock%}
+</html>

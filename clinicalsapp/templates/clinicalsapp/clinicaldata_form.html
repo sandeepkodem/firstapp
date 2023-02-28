@@ -1,0 +1,20 @@
+{%extends 'clinicalsapp/index.html' %}
+{%block body%}
+
+
+<h2>Patient details</h2>
+First Name   : {{patient.firstname}}
+<br>
+Last Name    : {{patient.lastname}}
+<br>
+Age          : {{patient.age}}
+
+<form action="" method="POST">
+    {%csrf_token %}
+    {{form.as_table}}
+    <input type="submit" value="save">
+
+
+
+</form>
+{%endblock%}

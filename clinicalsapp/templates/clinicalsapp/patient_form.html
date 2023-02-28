@@ -1,0 +1,54 @@
+{%extends "clinicalsapp/index.html"%}
+<html>
+<head>
+    
+    <title>Page Title</title>
+{%block body%}
+   
+<body>
+    <h1>create patient</h1>
+    <form action="" method="POST">
+        <table>
+            {{form.as_table}}
+        </table>
+        <br><br>
+        
+        {% csrf_token %}
+        <div>
+        <input type="submit" class="save" value="save">
+        <br><br>
+        <a class='view' href="{% url 'clinicals:list' %}" >View Patients</a>
+    </div>
+        <style>
+            .view {
+                background-color: #f44336;
+                color: white;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+              }
+              
+              a:hover, a:active {
+                background-color: red;
+              }
+              .save{
+                background-color: green;
+                color: white;
+                padding: 14px 40px;
+                text-align: center;
+                text-decoration: aquamarine;
+                display: inline-block;
+              }
+
+              
+        </style>
+        <br><br><br>
+        
+
+    </form>
+
+    
+</body>\
+{%endblock%}
+</html>
