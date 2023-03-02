@@ -1,4 +1,4 @@
 django
 waitress
 whitenoise
-djanog-crispy-forms
+django-crispy-forms
