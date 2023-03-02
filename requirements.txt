@@ -1,2 +1,4 @@
 django==2.2.10
 waitress==1.4.3
+whitenoise
+djanog-crispy-forms
